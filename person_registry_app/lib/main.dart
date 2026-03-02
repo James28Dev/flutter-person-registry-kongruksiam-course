@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:person_registry_app/screens/home.dart';
+import 'package:person_registry_app/screens/item.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.blue,
           centerTitle: true,
         ),
-        body: const Home(),
+        body: const Item(),
       ),
     );
   }
