@@ -5,34 +5,19 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Container(
-          color: Colors.orange,
-          padding: const EdgeInsets.all(10),
-          child: const Text(
-            "James",
-            style: TextStyle(fontSize: 30, letterSpacing: 3),
-          ),
+        Image.network(
+          "https://flutter.dev/assets/icon_flutter.4262c71228b7aa391e995fe5f1d57795.png",
+          height: 150,
+          width: 150,
         ),
-        Container(
-          color: Colors.orange,
-          padding: const EdgeInsets.all(10),
-          child: const Text(
-            "James",
-            style: TextStyle(fontSize: 30, letterSpacing: 3),
-          ),
-        ),
-        Container(
-          color: Colors.orange,
-          padding: const EdgeInsets.all(10),
-          child: const Text(
-            "James",
-            style: TextStyle(fontSize: 30, letterSpacing: 3),
-          ),
-        ),
+        const SizedBox(height: 30),
+        Image.asset("assets/images/pic1.png", width: 150, height: 150),
+        const SizedBox(height: 30),
+        Image.asset("assets/images/pic2.png", width: 150, height: 150),
       ],
     );
   }
