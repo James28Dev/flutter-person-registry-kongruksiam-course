@@ -10,6 +10,18 @@ class Item extends StatefulWidget {
 class _ItemState extends State<Item> {
   int quantity = 10;
 
+  void addQuantity() {
+    setState(() {
+      quantity += 1;
+    });
+  }
+
+  void removeQuantity() {
+    setState(() {
+      quantity = quantity <= 0 ? 0 : quantity - 1;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -25,11 +37,7 @@ class _ItemState extends State<Item> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               OutlinedButton(
-                onPressed: () {
-                  setState(() {
-                    quantity += 1;
-                  });
-                },
+                onPressed: addQuantity,
                 child: const Text(
                   "+",
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
@@ -37,11 +45,7 @@ class _ItemState extends State<Item> {
               ),
               const SizedBox(height: 20),
               OutlinedButton(
-                onPressed: () {
-                  setState(() {
-                    quantity = quantity <= 0 ? 0 : quantity - 1;
-                  });
-                },
+                onPressed: removeQuantity,
                 child: const Text(
                   "-",
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
