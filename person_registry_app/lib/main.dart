@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:person_registry_app/screens/item.dart';
+
+import 'screens/item.dart';
 
 void main() {
   runApp(const MyApp());
