@@ -18,10 +18,10 @@ class _ItemState extends State<Item> {
         return Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(30),
-            color: Colors.orange,
+            color: data[index].job.color,
           ),
           margin: EdgeInsets.symmetric(horizontal: 2, vertical: 5),
-          padding: EdgeInsets.all(40),
+          padding: EdgeInsets.all(30),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -33,12 +33,12 @@ class _ItemState extends State<Item> {
                     style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                   ),
                   Text(
-                    "Age: ${data[index].age} years old, Job: ${data[index].job}",
+                    "Age: ${data[index].age} years old, Job: ${data[index].job.title}",
                     style: TextStyle(fontSize: 20),
                   ),
-                  Image.asset("assets/images/pic1.png", width: 70, height: 70),
                 ],
               ),
+              Image.asset(data[index].job.image, width: 70, height: 70),
             ],
           ),
         );
