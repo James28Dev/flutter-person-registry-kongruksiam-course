@@ -7,7 +7,7 @@ enum Job {
   police(
     title: "Police",
     image: "assets/images/pic4.png",
-    color: Colors.yellow,
+    color: Colors.orangeAccent,
   ),
   soldier(
     title: "Soldier",

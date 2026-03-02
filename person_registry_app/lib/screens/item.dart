@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../models/person.dart';
 
@@ -30,11 +31,19 @@ class _ItemState extends State<Item> {
                 children: [
                   Text(
                     data[index].name,
-                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.kanit(
+                      textStyle: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                   Text(
                     "Age: ${data[index].age} years old, Job: ${data[index].job.title}",
-                    style: TextStyle(fontSize: 20),
+                    style: GoogleFonts.prompt(
+                      textStyle: TextStyle(fontSize: 15),
+                    ),
                   ),
                 ],
               ),
