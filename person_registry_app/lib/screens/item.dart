@@ -8,53 +8,26 @@ class Item extends StatefulWidget {
 }
 
 class _ItemState extends State<Item> {
-  int quantity = 10;
-
-  void addQuantity() {
-    setState(() {
-      quantity += 1;
-    });
-  }
-
-  void removeQuantity() {
-    setState(() {
-      quantity = quantity <= 0 ? 0 : quantity - 1;
-    });
-  }
+  List data = ["James", "Ople", "Developer", "Flutter", "Dart"];
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            "$quantity",
-            style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+    return ListView.builder(
+      itemCount: data.length,
+      itemBuilder: (context, index) {
+        return Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30),
+            color: Colors.orange,
           ),
-          const SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              OutlinedButton(
-                onPressed: addQuantity,
-                child: const Text(
-                  "+",
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-                ),
-              ),
-              const SizedBox(height: 20),
-              OutlinedButton(
-                onPressed: removeQuantity,
-                child: const Text(
-                  "-",
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
-                ),
-              ),
-            ],
+          margin: EdgeInsets.symmetric(horizontal: 2, vertical: 5),
+          padding: EdgeInsets.all(40),
+          child: Text(
+            data[index],
+            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 }
