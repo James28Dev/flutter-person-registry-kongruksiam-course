@@ -22,9 +22,24 @@ class _ItemState extends State<Item> {
           ),
           margin: EdgeInsets.symmetric(horizontal: 2, vertical: 5),
           padding: EdgeInsets.all(40),
-          child: Text(
-            data[index].name,
-            style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    data[index].name,
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    "Age: ${data[index].age} years old, Job: ${data[index].job}",
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  Image.asset("assets/images/pic1.png", width: 70, height: 70),
+                ],
+              ),
+            ],
           ),
         );
       },
