@@ -10,6 +10,7 @@ class Home extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           TextButton(
+            style: TextButton.styleFrom(foregroundColor: Colors.red),
             onPressed: () {},
             child: Text(
               "Text Button",
@@ -18,6 +19,10 @@ class Home extends StatelessWidget {
           ),
           SizedBox(height: 30),
           FilledButton(
+            style: FilledButton.styleFrom(
+              backgroundColor: Colors.red,
+              foregroundColor: Colors.white,
+            ),
             onPressed: () {},
             child: Text(
               "Filled Button",
@@ -26,6 +31,10 @@ class Home extends StatelessWidget {
           ),
           SizedBox(height: 30),
           OutlinedButton(
+            style: OutlinedButton.styleFrom(
+              side: BorderSide(color: Colors.red, width: 2),
+              foregroundColor: Colors.black,
+            ),
             onPressed: () {},
             child: Text(
               "Outlined Button",
@@ -34,6 +43,10 @@ class Home extends StatelessWidget {
           ),
           SizedBox(height: 30),
           ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.red,
+              foregroundColor: Colors.white,
+            ),
             onPressed: () {},
             child: Text(
               "Elevated Button",
