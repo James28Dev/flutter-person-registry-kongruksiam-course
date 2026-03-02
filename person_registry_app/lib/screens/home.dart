@@ -5,20 +5,43 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Image.network(
-          "https://flutter.dev/assets/icon_flutter.4262c71228b7aa391e995fe5f1d57795.png",
-          height: 150,
-          width: 150,
-        ),
-        const SizedBox(height: 30),
-        Image.asset("assets/images/pic1.png", width: 150, height: 150),
-        const SizedBox(height: 30),
-        Image.asset("assets/images/pic2.png", width: 150, height: 150),
-      ],
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          TextButton(
+            onPressed: () {},
+            child: Text(
+              "Text Button",
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            ),
+          ),
+          SizedBox(height: 30),
+          FilledButton(
+            onPressed: () {},
+            child: Text(
+              "Filled Button",
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            ),
+          ),
+          SizedBox(height: 30),
+          OutlinedButton(
+            onPressed: () {},
+            child: Text(
+              "Outlined Button",
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            ),
+          ),
+          SizedBox(height: 30),
+          ElevatedButton(
+            onPressed: () {},
+            child: Text(
+              "Elevated Button",
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
