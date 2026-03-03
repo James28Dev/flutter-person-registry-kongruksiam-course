@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../models/person.dart';
 
@@ -25,7 +26,10 @@ class _AddFormState extends State<AddForm> {
       title: "My title",
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("แบบฟอร์มบันทึกข้อมูล"),
+          title: Text(
+            "Personal information recording form",
+            style: GoogleFonts.kanit(fontSize: 20),
+          ),
           backgroundColor: Colors.blue,
           centerTitle: true,
         ),
@@ -39,11 +43,11 @@ class _AddFormState extends State<AddForm> {
                   maxLength: 20,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
-                    label: Text("ชื่อ", style: TextStyle(fontSize: 20)),
+                    label: Text("Name", style: GoogleFonts.kanit(fontSize: 20)),
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return "กรุณากรอกชื่อ";
+                      return "Please enter your name.";
                     }
                     return null;
                   },
@@ -55,11 +59,11 @@ class _AddFormState extends State<AddForm> {
                   maxLength: 20,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
-                    label: Text("อายุ", style: TextStyle(fontSize: 20)),
+                    label: Text("Age", style: GoogleFonts.kanit(fontSize: 20)),
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return "กรุณากรอกอายุ";
+                      return "Please enter your age.";
                     }
                     return null;
                   },
@@ -71,7 +75,7 @@ class _AddFormState extends State<AddForm> {
                 DropdownButtonFormField(
                   initialValue: _job,
                   decoration: InputDecoration(
-                    label: Text("อาชีพ", style: TextStyle(fontSize: 20)),
+                    label: Text("Job", style: TextStyle(fontSize: 20)),
                   ),
                   items: Job.values.map((key) {
                     return DropdownMenuItem(value: key, child: Text(key.title));
@@ -90,7 +94,7 @@ class _AddFormState extends State<AddForm> {
                     data.add(Person(name: _name, age: _age, job: _job));
                     _formKey.currentState!.reset();
                   },
-                  child: Text("บันทึก", style: TextStyle(fontSize: 20)),
+                  child: Text("Submit", style: GoogleFonts.kanit(fontSize: 20)),
                 ),
               ],
             ),
