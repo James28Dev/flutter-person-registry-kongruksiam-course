@@ -13,9 +13,15 @@ enum Job {
     title: "Soldier",
     image: "assets/images/pic5.png",
     color: Colors.indigo,
+  ),
+  teacher(
+    title: "Teacher",
+    image: "assets/images/pic6.png",
+    color: Colors.pink,
   );
 
   const Job({required this.title, required this.image, required this.color});
+
   final String title;
   final String image;
   final Color color;
