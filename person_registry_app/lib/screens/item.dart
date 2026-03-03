@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../models/person.dart';
 import 'add_form.dart';
+import 'delete_form.dart';
 
 class Item extends StatefulWidget {
   const Item({super.key});
@@ -59,16 +60,30 @@ class _ItemState extends State<Item> {
           ),
         ),
         SizedBox(
-          width: 100,
+          width: double.infinity,
           height: 100,
-          child: IconButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => AddForm()),
-              );
-            },
-            icon: const Icon(Icons.add, size: 40, color: Colors.blue),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => AddForm()),
+                  );
+                },
+                icon: const Icon(Icons.add, size: 40, color: Colors.blue),
+              ),
+              IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DeleteForm()),
+                  );
+                },
+                icon: const Icon(Icons.remove, size: 40, color: Colors.red),
+              ),
+            ],
           ),
         ),
       ],

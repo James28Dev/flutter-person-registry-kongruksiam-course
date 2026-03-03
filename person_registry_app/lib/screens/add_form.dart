@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:person_registry_app/main.dart';
 
+import '../main.dart';
 import '../models/person.dart';
 
 class AddForm extends StatefulWidget {
@@ -24,7 +24,6 @@ class _AddFormState extends State<AddForm> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "My title",
       home: Scaffold(
         appBar: AppBar(
           title: Text(

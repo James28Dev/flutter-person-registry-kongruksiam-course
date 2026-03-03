@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'screens/item.dart';
 
@@ -12,10 +13,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "My title",
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("My Application"),
+          title: Text(
+            "Person Registry App",
+            style: GoogleFonts.kanit(fontWeight: FontWeight.bold),
+          ),
+          foregroundColor: Colors.white,
           backgroundColor: Colors.blue,
           centerTitle: true,
         ),
