@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:person_registry_app/main.dart';
 
 import '../models/person.dart';
 
@@ -93,6 +94,10 @@ class _AddFormState extends State<AddForm> {
                     _formKey.currentState!.save();
                     data.add(Person(name: _name, age: _age, job: _job));
                     _formKey.currentState!.reset();
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => MyApp()),
+                    );
                   },
                   child: Text("Submit", style: GoogleFonts.kanit(fontSize: 20)),
                 ),
