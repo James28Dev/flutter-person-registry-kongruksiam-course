@@ -86,6 +86,9 @@ class _AddFormState extends State<AddForm> {
                   style: FilledButton.styleFrom(backgroundColor: Colors.blue),
                   onPressed: () {
                     _formKey.currentState!.validate();
+                    _formKey.currentState!.save();
+                    data.add(Person(name: _name, age: _age, job: _job));
+                    _formKey.currentState!.reset();
                   },
                   child: Text("บันทึก", style: TextStyle(fontSize: 20)),
                 ),
