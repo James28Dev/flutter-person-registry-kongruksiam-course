@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../models/person.dart';
+
 class AddForm extends StatefulWidget {
   const AddForm({super.key});
 
@@ -38,6 +40,19 @@ class _AddFormState extends State<AddForm> {
                   ),
                 ),
                 const SizedBox(height: 20),
+                DropdownButtonFormField(
+                    decoration: InputDecoration(
+                      label: Text("อาชีพ", style: TextStyle(fontSize: 20)),
+                    ), items: Job.values.map((key) {
+                  return DropdownMenuItem(
+                      value: key,
+                      child: Text(key.title)
+                  );
+                }).toList(),
+                    onChanged: (values) {
+                      print(values);
+                    }
+                ),
                 FilledButton(
                   style: FilledButton.styleFrom(backgroundColor: Colors.blue),
                   onPressed: () {},
