@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'screens/add_form.dart';
 import 'screens/item.dart';
 
 void main() {
-  runApp(const AddForm());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
