@@ -10,6 +10,15 @@ class AddForm extends StatefulWidget {
 }
 
 class _AddFormState extends State<AddForm> {
+  final _formKey = GlobalKey<FormState>();
+
+  // ignore: unused_field
+  String _name = '';
+
+  // ignore: unused_field
+  int _age = 20;
+  Job _job = Job.chef;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,6 +32,7 @@ class _AddFormState extends State<AddForm> {
         body: Padding(
           padding: const EdgeInsetsGeometry.all(15),
           child: Form(
+            key: _formKey,
             child: Column(
               children: [
                 TextFormField(
@@ -31,6 +41,9 @@ class _AddFormState extends State<AddForm> {
                   decoration: InputDecoration(
                     label: Text("ชื่อ", style: TextStyle(fontSize: 20)),
                   ),
+                  onSaved: (value) {
+                    _name = value!;
+                  },
                 ),
                 TextFormField(
                   maxLength: 20,
@@ -38,20 +51,24 @@ class _AddFormState extends State<AddForm> {
                   decoration: InputDecoration(
                     label: Text("อายุ", style: TextStyle(fontSize: 20)),
                   ),
+                  onSaved: (value) {
+                    _age = int.parse(value.toString());
+                  },
                 ),
                 const SizedBox(height: 20),
                 DropdownButtonFormField(
-                    decoration: InputDecoration(
-                      label: Text("อาชีพ", style: TextStyle(fontSize: 20)),
-                    ), items: Job.values.map((key) {
-                  return DropdownMenuItem(
-                      value: key,
-                      child: Text(key.title)
-                  );
-                }).toList(),
-                    onChanged: (values) {
-                      print(values);
-                    }
+                  initialValue: _job,
+                  decoration: InputDecoration(
+                    label: Text("อาชีพ", style: TextStyle(fontSize: 20)),
+                  ),
+                  items: Job.values.map((key) {
+                    return DropdownMenuItem(value: key, child: Text(key.title));
+                  }).toList(),
+                  onChanged: (values) {
+                    setState(() {
+                      _job = values!;
+                    });
+                  },
                 ),
                 FilledButton(
                   style: FilledButton.styleFrom(backgroundColor: Colors.blue),
