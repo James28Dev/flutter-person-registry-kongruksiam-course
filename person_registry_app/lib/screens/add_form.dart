@@ -25,9 +25,23 @@ class _AddFormState extends State<AddForm> {
               children: [
                 TextFormField(
                   maxLength: 20,
+                  keyboardType: TextInputType.text,
                   decoration: InputDecoration(
                     label: Text("ชื่อ", style: TextStyle(fontSize: 20)),
                   ),
+                ),
+                TextFormField(
+                  maxLength: 20,
+                  keyboardType: TextInputType.number,
+                  decoration: InputDecoration(
+                    label: Text("อายุ", style: TextStyle(fontSize: 20)),
+                  ),
+                ),
+                const SizedBox(height: 20),
+                FilledButton(
+                  style: FilledButton.styleFrom(backgroundColor: Colors.blue),
+                  onPressed: () {},
+                  child: Text("บันทึก", style: TextStyle(fontSize: 20)),
                 ),
               ],
             ),
